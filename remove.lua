@@ -49,3 +49,12 @@ Workspace.ChildAdded:Connect(function(anakBaru)
         end
     end
 end)
+
+_G.AutoFarm_Active = true 
+
+task.spawn(function()
+    while _G.AutoFarm_Active do -- Ini yang bikin script bisa berhenti!
+        -- [LOGIKA FARMING KAMU DI SINI]
+        task.wait(1)
+    end
+end)
