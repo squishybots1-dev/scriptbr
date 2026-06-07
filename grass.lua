@@ -125,5 +125,15 @@ local function eksekusiSapuBersih()
     matikanFlyDanNoclip()
 end
 
+_G.AutoFarm_Active = true -- Status awal saat di-load
+
+task.spawn(function()
+    while _G.AutoFarm_Active do -- Ini akan berhenti jika controller mengubahnya jadi false
+        -- [LOGIKA FARMING KAMU DI SINI]
+        task.wait(0.5) 
+    end
+    print("Skrip AutoFarm telah dihentikan oleh Controller.")
+end)
+
 -- Eksekusi otomatis
 task.spawn(eksekusiSapuBersih)
